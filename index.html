@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Hello World with Background</title>
+    <style>
+        /* Importing Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+        /* Body styling */
+        body {
+            background-image: url('spacewow.gif'); /* Custom background image */
+            background-size: cover;      /* Make sure background covers the whole page */
+            background-position: center; /* Center the background */
+            color: #00ff88;              /* Text color (green) */
+            font-family: 'Orbitron', sans-serif; /* Font style */
+            display: flex;
+            justify-content: center;     /* Center horizontally */
+            align-items: center;         /* Center vertically */
+            height: 100vh;
+            margin: 0;
+            position: relative;          /* Important for positioning the cat image */
+        }
+
+        /* Glowing and fading text animation */
+        h1 {
+            font-size: 3em;
+            animation: glow 2s infinite alternate, fadeIn 2s forwards;
+        }
+
+        /* Glowing effect */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 15px #00ff88;
+            }
+            100% {
+                text-shadow: 0 0 20px #00ff88, 0 0 30px #00ffaa, 0 0 40px #00ffaa;
+            }
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Image styling (astronaut cat) */
+        .astronaut-cat {
+            position: absolute;
+            bottom: 100px;               /* Move up from bottom */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            width: 200px;                /* Set the image size */
+            animation: float 3s infinite ease-in-out;
+        }
+
+        /* Floating effect for astronaut cat */
+        @keyframes float {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <img src="lionrawr.gif" alt="Astronaut Cat Waving" class="astronaut-cat">
+	
+	<a href="https://www.youtube.com/watch?v=0MjaInciDso" class="custom-link" target="_blank">
+    Click to watch something sweet!
+</a>
+</body>
+</html>
+
+
