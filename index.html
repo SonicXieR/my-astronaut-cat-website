@@ -3,6 +3,12 @@
 <head>
     <title>Animated Hello World with Background</title>
     <style>
+	#visitor-counter {
+    font-size: 1.3em;
+    color: #00ffaa;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #00ffaa;
+}
         /* Importing Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
@@ -66,13 +72,24 @@
     </style>
 </head>
 <body>
-    <h1>Hello, world!</h1>
+    <h1>Hello, people!</h1>
     <img src="lionrawr.gif" alt="Astronaut Cat Waving" class="astronaut-cat">
 	
 	<a href="https://www.youtube.com/watch?v=0MjaInciDso" class="custom-link" target="_blank">
     Click to watch something sweet!
 </a>
 </body>
-</html>
+<p id="visitor-counter" style="margin-top: 20px;">People who say hello to the world 😄: Loading...</p>
 
+<script>
+    // This uses CountAPI to track unique visits to your page
+    fetch('https://api.countapi.xyz/update/SonicXieR/my-astronaut-cat-website/?amount=1')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('visitor-counter').innerText =
+                "People who say hello to world 😄: " + data.value;
+        });
+</script>
+
+</html>
 
